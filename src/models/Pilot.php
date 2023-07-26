@@ -1,8 +1,8 @@
 <?php
-namespace src\models;
+namespace kiki\models;
 
-use src\interfaces\PilotInterface;
-use src\interfaces\VehicleInterface;
+use kiki\interfaces\PilotInterface;
+use kiki\interfaces\VehicleInterface;
 
 class Pilot implements PilotInterface
 {

@@ -1,23 +1,18 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
-use src\models\Starship;
-use src\models\Pilot;
-use src\models\Airspeeder;
-use src\models\Bomber;
-
-
-// Create instances of vehicles
-$starship = new Starship();
-$airspeeder = new Airspeeder();
-$bomber = new Bomber();
+use kiki\factories\StarshipFactory;
+use kiki\models\Starship;
+use kiki\models\Pilot;
+use kiki\models\Airspeeder;
+use kiki\models\Bomber;
 
 // Create an instance of the pilot
 $pilot = new Pilot();
 
 // Create instances of vehicles
-$starship = new Starship();
+$starship = new Starship("Star Kiki");
 $airspeeder = new Airspeeder();
 $bomber = new Bomber();
 
@@ -38,6 +33,15 @@ echo "Driving the Bomber:\n";
 $pilot->setVehicle($bomber);
 $pilot->drive();
 echo "All Good\n";
+
+$corvette = StarshipFactory::make('Corvette', 'Corvette 1', 50);
+echo "Corvette name: " . $corvette->getName() . " - ";
+echo "Corvette passengers: " . $corvette->countPassengers() . " /// ";
+
+$starDestroyer = StarshipFactory::make('StarDestroyer', 'Star Destroyer 1');
+echo "Star Destroyer name: " . $starDestroyer->getName() . " /// ";
+$starDestroyer->attack($corvette);
+
 
 echo 'All you base belong to us!';
 ?>

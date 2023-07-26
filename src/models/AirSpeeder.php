@@ -1,8 +1,8 @@
 <?php
-namespace src\models;
+namespace kiki\models;
 
-use src\interfaces\VehicleInterface;
-use src\interfaces\FlyableInterface;
+use kiki\interfaces\VehicleInterface;
+use kiki\interfaces\FlyableInterface;
 
 class Airspeeder implements VehicleInterface, FlyableInterface
 {

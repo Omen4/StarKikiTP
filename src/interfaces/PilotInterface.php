@@ -1,5 +1,5 @@
 <?php
-namespace src\interfaces;
+namespace kiki\interfaces;
 
 interface PilotInterface
 {

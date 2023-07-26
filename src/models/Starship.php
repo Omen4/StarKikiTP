@@ -1,10 +1,24 @@
 <?php
-namespace src\models;
+namespace kiki\models;
 
-use src\interfaces\VehicleInterface;
+use kiki\interfaces\FlyableInterface;
+use kiki\interfaces\VehicleInterface;
 
-class Starship implements VehicleInterface
+class Starship implements VehicleInterface, FlyableInterface
 {
+  protected $name;
+
+  public function __construct($name)
+  {
+    $this->name = $name;
+  }
+
+  public function getName()
+  {
+    return $this->name;
+  }
+
+
   public function start()
   {
     // Logic to start the starship
@@ -18,6 +32,15 @@ class Starship implements VehicleInterface
   public function embark()
   {
     // Logic to embark in the starship
+  }
+  public function takeOff()
+  {
+    // Logic to take off with the starship
+  }
+
+  public function land()
+  {
+    // Logic to land with the starship
   }
 }
 ?>
